@@ -2,7 +2,16 @@ Travelizer::Application.routes.draw do
   devise_for :users
 
   get "home/index"
-  devise_for :users
+  
+  resources :groups do
+	resources :memberships
+  end
+  
+  resources :users do
+    resources :memberships
+  end
+  
+  resources :memberships
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
