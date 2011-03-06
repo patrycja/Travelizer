@@ -22,5 +22,20 @@ Travelizer::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+ 
+  ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true,  
+    :address        => 'smtp.gmail.com',
+    :port           => 587,
+    :domain         => 'mail.gmail.com',
+    :authentication => :plain,
+    :user_name      => 'restlessflycatcher.rf@gmail.com',
+    :password       => 'restlessflycatcher'
+  }
+
 end
 
