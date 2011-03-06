@@ -10,6 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110306230030) do
 
   create_table "groups", :force => true do |t|
@@ -28,6 +29,9 @@ ActiveRecord::Schema.define(:version => 20110306230030) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+ActiveRecord::Schema.define(:version => 20110306232600) do
+>>>>>>> b64083776d9b216e04949d5fd552fae48492fce3
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110306230030) do
     t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
